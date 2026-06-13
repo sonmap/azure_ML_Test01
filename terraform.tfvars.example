@@ -1,0 +1,34 @@
+# 기본 테스트용: Korea Central + 비용 최소화
+location       = "koreacentral"
+location_short = "krc"
+name_prefix    = "ins-mlops"
+environment    = "dev"
+
+# Compute Instance는 켜져 있는 동안 비용 발생. Notebook 테스트 후 반드시 Stop.
+enable_compute_instance   = true
+compute_instance_name     = "ci-ins-dev"
+compute_instance_vm_size  = "Standard_DS3_v2"
+
+# Terraform을 서비스 프린시펄로 실행할 경우, 실제 사용자 Object ID를 입력하세요.
+# Azure Portal > Microsoft Entra ID > Users > 사용자 선택 > Object ID
+# developer_object_id = "00000000-0000-0000-0000-000000000000"
+
+# Azure ML Job/Pipeline용 CPU cluster. min_nodes=0으로 idle 비용 최소화.
+enable_cpu_cluster       = true
+cpu_cluster_name         = "cpu-cluster"
+cpu_cluster_vm_size      = "Standard_DS3_v2"
+cpu_cluster_vm_priority  = "LowPriority"
+cpu_cluster_min_nodes    = 0
+cpu_cluster_max_nodes    = 2
+cpu_cluster_idle_duration = "PT15M"
+
+# ACR는 커스텀 Docker environment가 필요할 때 사용. Basic은 테스트용.
+enable_container_registry = true
+container_registry_sku    = "Basic"
+
+storage_replication_type = "LRS"
+
+tags = {
+  owner = "sonmap"
+  cost  = "lab"
+}

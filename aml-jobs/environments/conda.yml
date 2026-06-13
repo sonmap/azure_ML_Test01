@@ -1,0 +1,14 @@
+name: insurance-mlops-py310
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - pandas
+      - numpy
+      - scikit-learn
+      - matplotlib
+      - joblib
+      - mlflow
+      - azureml-mlflow

@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+type: command
+display_name: insurance-claim-risk-train
+experiment_name: insurance-mlops-poc
+code: ./src
+command: >-
+  python train.py
+  --input_csv ${{inputs.insurance_csv}}
+  --model_output ${{outputs.model_output}}
+inputs:
+  insurance_csv:
+    type: uri_file
+    path: azureml:motor-insurance-csv:1
+outputs:
+  model_output:
+    type: uri_folder
+environment:
+  conda_file: ./environments/conda.yml
+  image: mcr.microsoft.com/azureml/openmpi4.1.0-ubuntu20.04:latest
+compute: azureml:cpu-cluster

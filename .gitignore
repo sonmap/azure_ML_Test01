@@ -1,0 +1,39 @@
+# Terraform local files
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+tfplan
+*.tfplan
+destroyplan
+
+# Terraform variables - may contain subscription id, user object id, secret values
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Keep example variable files
+!terraform.tfvars.example
+
+# Azure / local authentication files
+.azure/
+.azureml/
+
+# Kaggle credentials
+kaggle.json
+.kaggle/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
