@@ -79,6 +79,7 @@ Azure Container Registry	acrinsmlops6n1381
 Application Insights	appi-ins-mlops-dev-krc
 Log Analytics Workspace	log-ins-mlops-dev-krc
 4. Repository Structure
+```text
 .
 ├── providers.tf
 ├── variables.tf
@@ -101,6 +102,7 @@ Log Analytics Workspace	log-ins-mlops-dev-krc
     │   └── conda.yml
     └── src/
         └── train.py
+        ```text
 5. Prerequisites
 
 Before running this project, install the following tools:
